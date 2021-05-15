@@ -1,0 +1,61 @@
+TEST CASES
+
+1. CHECKING IF "H" and "K" VALUE IS CORRECT WHEN THE USER INPUTS THEIR DESIRED A, B AND C VALUES
+
+- FIRST: Programmer must understand how to complete the square.
+- Inserted own values for the three variables and completed the square by hand. Therefore resulting in a step by step understanding of how it is done.  
+
+a. Divide "a" value out
+b. Divide by two and then sqaure it 
+C. Plus minus that result
+D. Multiply the minus result by the "A" value to take it out of the bracket and either +/- that integer with the C value on the outside
+E. Write in vertex form ----- y = a(x-h)^2 + K
+
+- Took this knowledge and implicated it into Visual Basic. However, because VB is a new program for us we had to do some research. By using:
+https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/visual-basic-language-reference
+
+This website helped with the syntax and how variables must be declared.
+
+After multiple times of changing the variables and moving around the object and changing up the code was able to have a complete and succesful program.  Also decalred variables in a general format thus resulting in no futher declarations later in the program.
+
+
+
+2. BUTTONS: Using buttons to help create userinterface.
+
+- By comepleting some research it was learned that activeX Controls (Type of button) was the best way to implement the program within it. Minor errors and misjudgements took place as one must be aware when in design mode.  
+By changing the name of the button, and thus then the caption was able to organize the code.
+
+- Multiple buttons had to be used for different sections of the program as the buttons are used to calculate their specific task mentioned in the code.
+
+- BY TESTING each button seperatly, had to make sure the answer would pop up in the section we wanted it too.
+
+
+
+
+3. MOVING OBJECTS
+
+- When moving the objects and interface around, the program would crash.  Realized that VB code uses the actual grid therefore when things are moved around,
+the coordinates in the VB code must be changed too.  Therefore resulting in a postive test case, thus turning the program back to succesful.
+
+
+
+4. GRAPHING
+- At first when graphing there was a scatter plot and used a trendline option where the parent parabola and the transformation parabola both would graph correctly. 
+However, when the parent Inverse and the transformed Inverse was graphed only the points were on the graph. 
+Because of this, could not use a trendline on the graph anymore and instead used a scatter plot with smooth lines. 
+This resulted in another positive test case where all the different types of graphs were graphed vividly and correctly.
+
+- Had to learn how to graph all the graphs on only one graph so the user can see the change in first person aswell.  
+This was tested when it was right clicked on the graph, pressed "select date" and then added the extra graph/data into that graph. 
+
+
+
+5. RADICAL 
+- Some struggles getting the radical function to work when it is being graphed.
+
+
+
+
+
+Further improvements:
+Developing alogorithm for epsilon delta definitions, derivatives and limits.
