@@ -1,0 +1,218 @@
+RECIPROCAL
+
+Sub reciprocal()
+
+'Declaring Variables
+Dim A_value As Double, K_value As Double, H_value As Double
+
+'Providing user a space to insert values
+A_value = Range("C64").Value
+H_value = Range("C65").Value
+K_value = Range("C66").Value
+
+'space where Asymtotes are outputted
+Range("E68").Value = (H_value) * (-1)
+Range("E69").Value = (K_value)
+
+'Calculating "x" values
+Range("I62").Value = ((-2) + (H_value))
+Range("I63").Value = ((-1) + (H_value))
+Range("I64").Value = ((1) + (H_value))
+Range("I65").Value = ((2) + (H_value))
+
+'Calculating "y" values
+Range("J62").Value = ((-0.5) * (A_value)) + (K_value)
+Range("J63").Value = ((-1) * (A_value)) + (K_value)
+Range("J64").Value = ((1) * (A_value)) + (K_value)
+Range("J65").Value = ((0.5) * (A_value)) + (K_value)
+
+End Sub 'Reciprocal Button end
+
+-------------------------------------------------------------------------------------------------------------------------
+INVERSE RADICAL
+
+Sub radicalInverse()
+
+'Making "x" values equal the "y" values
+Range("E48").Value = Range("J37").Value
+Range("E49").Value = Range("J38").Value
+Range("E50").Value = Range("J39").Value
+Range("E51").Value = Range("J40").Value
+Range("E52").Value = Range("J41").Value
+
+'Making "y" values equal the "x" values
+Range("F48").Value = Range("I37").Value
+Range("F49").Value = Range("I38").Value
+Range("F50").Value = Range("I39").Value
+Range("F51").Value = Range("I40").Value
+Range("F52").Value = Range("I41").Value
+
+
+End Sub 'End Radical Inverse
+
+-----------------------------------------------------------------------------------------------------------------------------
+CALCULATING ROOTS
+
+General declaration of variables
+Public A_value As Double
+Public B_value As Double
+Public C_value As Double
+
+Sub calculateRoots()
+
+'declaring variables
+Dim X1 As Double, X2 As Double, Disc As Double
+
+'calling code from sheet1
+Sheets("Sheet1").Range("B11:C13").Clear
+
+'Providing user a space to input values
+A_value = Range("C5").Value
+B_value = Range("C6").Value
+C_value = Range("C7").Value
+
+'discriminate value
+Disc = ((B_value * B_value) - (4 * A_value * C_value))
+
+'if discriminate is less than zero
+If Disc < 0 Then
+
+Range("B11").Value = "There are no real roots"
+
+'if ends, else if begins (discriminate equals zero)
+ElseIf Disc = 0 Then
+
+'one root
+X1 = ((-(B_value) + (Sqr((B_value * B_value) - (4 * A_value * C_value)))) / (2 * A_value))
+Range("B11").Value = "There's only one root"
+Range("C11").Value = X1
+
+'else if ends, end if begins
+End If
+
+'two roots
+X1 = ((-(B_value) + (Sqr((B_value * B_value) - (4 * A_value * C_value)))) / (2 * A_value))
+X2 = ((-(B_value) - (Sqr((B_value * B_value) - (4 * A_value * C_value)))) / (2 * A_value))
+
+'print statements for where the two, one or zero roots will print
+Range("B11").Value = "Root 1"
+Range("C11").Value = X1
+
+Range("B12").Value = "Root 2"
+Range("C12").Value = X2
+
+
+End Sub 'end calculate roots
+
+
+----------------------------------------------------------------------------------------------------------------------------
+VERTEX FORM
+Sub vertexForm()
+
+'Uses the values that were inputted by the user in the three "c" columns
+A_value = Range("C5").Value
+B_value = Range("C6").Value
+C_value = Range("C7").Value
+
+'Calculates "H, and K" values
+H_value = ((B_value / A_value) / 2) * (-1)
+K_value = ((C_value) + ((H_value ^ 2) * (-1) * (A_value)))
+
+'Prints new values in the below quadrants
+Range("G5").Value = A_value
+Range("G6").Value = H_value
+Range("G7").Value = K_value
+
+End Sub 'end Vertex form
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+QUADRATIC TRANSFORMATIONS
+
+Sub quadTransformation()
+
+'Uses the values that were inputted by the user in the three "c" columns
+A_value = Range("C5").Value
+B_value = Range("C6").Value
+C_value = Range("C7").Value
+
+'Calculates transformations
+H_value = ((B_value / A_value) / 2)
+K_value = ((C_value) + ((H_value ^ 2) * (-1) * (A_value)))
+H_value = ((B_value / A_value) / 2)
+
+'Calculating the new "x" value points
+Range("F15").Value = (-2) - (H_value)
+Range("F16").Value = (-1) - (H_value)
+Range("F17").Value = (0) - (H_value)
+Range("F18").Value = (1) - (H_value)
+Range("F19").Value = (2) - (H_value)
+
+'Calculating the new "y" value points
+Range("G15").Value = ((4) * (A_value)) + (K_value)
+Range("G16").Value = ((1) * (A_value)) + (K_value)
+Range("G17").Value = ((0) * (A_value)) + (K_value)
+Range("G18").Value = ((1) * (A_value)) + (K_value)
+Range("G19").Value = ((4) * (A_value)) + (K_value)
+
+
+End Sub 'end quadratic transformations
+
+-------------------------------------------------------------------------------------------------------------------------------------
+INVERSE QUADRATIC
+
+Sub inverseQuad()
+
+'Calling values the user already Inputted
+A_value = Range("C5").Value
+B_value = Range("C6").Value
+C_value = Range("C7").Value
+
+'Changing "x" values  to "y" values
+Range("F25").Value = Range("G15").Value
+Range("F26").Value = Range("G16").Value
+Range("F27").Value = Range("G17").Value
+Range("F28").Value = Range("G18").Value
+Range("F29").Value = Range("G19").Value
+
+'Converting "x" values to "y" values
+Range("G25").Value = Range("F15").Value
+Range("G26").Value = Range("F16").Value
+Range("G27").Value = Range("F17").Value
+Range("G28").Value = Range("F18").Value
+Range("G29").Value = Range("F19").Value
+
+
+End Sub 'ending inverse quadratics
+
+------------------------------------------------------------------------------------------------------------------------------------
+TRANSFORMED RADICAL
+
+Sub transformRadical()
+
+'declaring variables
+Dim A_value As Double, K_value As Double, P_value As Double, Q_value As Double
+
+'Providing a place for user to input values
+A_value = Range("C39").Value
+K_value = Range("C40").Value
+P_value = Range("C41").Value
+Q_value = Range("C42").Value
+
+'finding the transformations for "x" values using users input
+Range("I38").Value = ((1) * (K_value)) - (P_value)
+Range("I38").Value = ((4) * (K_value)) - (P_value)
+Range("I39").Value = ((9) * (K_value)) - (P_value)
+Range("I40").Value = ((16) * (K_value)) - (P_value)
+Range("I41").Value = ((25) * (K_value)) - (P_value)
+
+'finding the transformations for "y" values using users input
+Range("J38").Value = ((1) * (A_value)) + (Q_value)
+Range("J38").Value = ((2) * (A_value)) + (Q_value)
+Range("J39").Value = ((3) * (A_value)) + (Q_value)
+Range("J40").Value = ((4) * (A_value)) + (Q_value)
+Range("J41").Value = ((5) * (A_value)) + (Q_value)
+
+End Sub 'end transformed radical
+
+-----------------------------------------------------------------------------------------------------------------
